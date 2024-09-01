@@ -50,12 +50,11 @@ export default function FaceRecognizer() {
 
         faceapi.matchDimensions(canvasRef.current, displaySize);
         //@ts-ignore
-        const detections = await faceapi
-          .detectAllFaces(
-            //@ts-ignore
-            videoRef.current,
-            new faceapi.TinyFaceDetectorOptions()
-          )
+        const detections = await faceapi.detectAllFaces(
+          //@ts-ignore
+          videoRef.current,
+          new faceapi.TinyFaceDetectorOptions()
+        );
 
         const resizedDetections = faceapi.resizeResults(
           detections,
@@ -65,7 +64,7 @@ export default function FaceRecognizer() {
         canvasRef &&
           canvasRef.current &&
           canvasRef.current
-          //@ts-ignore
+            //@ts-ignore
             .getContext("2d")
             .clearRect(0, 0, videoWidth, videoHeight);
         canvasRef &&
@@ -139,10 +138,12 @@ export default function FaceRecognizer() {
                 padding: "10px",
               }}
             >
-            {/* @ts-ignore */}
               <video
-                autoPlay={true} playsInline={true} muted={true}
-                ref={videoRef}
+                id="camera--view"
+                muted
+                autoPlay
+                playsInline
+                ref={videoRef as any}
                 height={videoHeight}
                 width={videoWidth}
                 onPlay={handleVideoOnPlay}
