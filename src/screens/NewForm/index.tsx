@@ -5,7 +5,7 @@ import CustomSlider from "../../components/CustomSlider";
 import { FieldValues, useForm } from "react-hook-form";
 import { message } from "antd";
 import api from "../../components/CustomHttpInterceptor";
-import FileUploader from "./components/FileUploader";
+// import FileUploader from "./components/FileUploader";
 import type { UploadFile } from "antd";
 import useNavbar from "../../hooks/useNavbar";
 import FaceRecognizer from "./components/FaceRecognizer";
